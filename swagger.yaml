@@ -1,0 +1,142 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: New Collection
+  contact: {}
+host: localhost:8000
+basePath: /api
+securityDefinitions: {}
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /produkapi:
+    get:
+      summary: list
+      tags:
+        - ProdukAPI
+      operationId: list
+      deprecated: false
+      produces:
+        - application/json
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    post:
+      summary: input
+      tags:
+        - ProdukAPI
+      operationId: input
+      deprecated: false
+      produces:
+        - application/json
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: name
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: category
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: stok
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: price
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: description
+          in: formData
+          required: true
+          type: string
+          description: ''
+        - name: image
+          in: formData
+          required: true
+          type: file
+          format: file
+          description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+  /produkapi/{id}:
+    get:
+      summary: detail
+      tags:
+        - ProdukAPI
+      operationId: detail
+      deprecated: false
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    put:
+      summary: edit
+      tags:
+        - ProdukAPI
+      operationId: edit
+      deprecated: false
+      produces:
+        - application/json
+      parameters:
+        - name: name
+          in: query
+          required: true
+          type: string
+          description: ''
+        - name: stok
+          in: query
+          required: true
+          type: string
+          description: ''
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+    delete:
+      summary: New Request
+      tags:
+        - ProdukAPI
+      operationId: NewRequest
+      deprecated: false
+      produces:
+        - application/json
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+          description: ''
+      responses:
+        '200':
+          description: ''
+          headers: {}
+tags:
+  - name: ProdukAPI
